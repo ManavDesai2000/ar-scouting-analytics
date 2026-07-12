@@ -33,6 +33,10 @@ ar-analyst-project/
 3. Set up Kaggle API credentials (see [Kaggle API docs](https://www.kaggle.com/docs/api))
 4. Open `01_billboard-hot-100.ipynb` and run all cells
 
+## Data Source
+
+- [Billboard Hot 100 + Audio Features](https://www.kaggle.com/datasets/thedevastator/billboard-hot-100-audio-features) — historical chart data (1965–present) combined with Spotify audio features, sourced from Kaggle
+
 ## Roadmap
 
 - [ ] Part 2: Live Spotify data pull for emerging artist scouting
