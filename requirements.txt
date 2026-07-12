@@ -1,0 +1,13 @@
+pandas
+numpy
+sqlalchemy
+spotipy
+requests
+python-dotenv
+matplotlib
+seaborn
+scikit-learn
+streamlit
+jupyter
+kaggle
+kagglehub
