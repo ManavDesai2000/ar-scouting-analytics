@@ -16,8 +16,13 @@ This project explores whether audio characteristics (danceability, energy, tempo
 
 **Part 2 — Live Momentum Analysis:**
 - Spotify's Developer API restricts popularity, follower, and genre data for standard developer access (as of 2026) — this project adapted by integrating Last.fm as a substitute momentum data source
-- Classified 19 current artists across 4 genres into Established/Emerging/Early-Stage tiers based on Last.fm listener counts
+- Classified 19 current artists across 4 genres into Established (9) / Emerging (7) / Early-Stage (3) tiers based on Last.fm listener counts
 - Identified an engagement-ratio signal (plays per listener) that surfaces high-loyalty artists — e.g., an Emerging-tier artist outperforming several Established acts in fan engagement despite a smaller audience
+
+**Part 3 — Scoring Model:**
+- Built a weighted Scouting Score (60% engagement / 40% reach) to rank Emerging-tier artists
+- Top recommendation: Motionless In White, ranking #1 on both audience reach and fan engagement
+- Demonstrated that raw popularity and the weighted score produce different rankings — e.g., an artist with the 2nd-highest listener count dropped to 4th once engagement was factored in, illustrating the value of engagement-aware scoring over popularity alone
 
 ## Tech Stack
 
@@ -34,6 +39,7 @@ This project explores whether audio characteristics (danceability, energy, tempo
 ar-analyst-project/
 ├── 01_billboard-hot-100.ipynb      # Part 1: Historical hit analysis
 ├── 02_live_spotify_data.ipynb      # Part 2: Live emerging artist scouting
+├── 03_scoring_model.ipynb          # Part 3: Combined scoring model
 ├── data/                            # Generated datasets (not tracked in Git)
 ├── requirements.txt                 # Python dependencies
 └── README.md
@@ -51,6 +57,7 @@ ar-analyst-project/
 5. Run the notebooks in order:
    - `01_billboard-hot-100.ipynb` — historical hit analysis
    - `02_live_spotify_data.ipynb` — live emerging artist scouting
+   - `03_scoring_model.ipynb` — combined scoring model (requires Part 2's output CSV)
 
 ## Data Source
 
@@ -60,7 +67,7 @@ ar-analyst-project/
 
 - [x] Part 1: Historical hit analysis
 - [x] Part 2: Live Spotify + Last.fm emerging artist scouting
-- [ ] Part 3: Combined hit-potential scoring model
+- [x] Part 3: Combined hit-potential scoring model
 - [ ] Part 4: Interactive dashboard
 
 ## Author
