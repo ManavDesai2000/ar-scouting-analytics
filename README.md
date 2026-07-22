@@ -16,13 +16,14 @@ This project explores whether audio characteristics (danceability, energy, tempo
 
 **Part 2 — Live Momentum Analysis:**
 - Spotify's Developer API restricts popularity, follower, and genre data for standard developer access (as of 2026) — this project adapted by integrating Last.fm as a substitute momentum data source
-- Classified 19 current artists across 4 genres into Established (9) / Emerging (7) / Early-Stage (3) tiers based on Last.fm listener counts
+- Classified 33 current artists across 8 genres into Established (15) / Emerging (13) / Early-Stage (5) tiers based on Last.fm listener counts
 - Identified an engagement-ratio signal (plays per listener) that surfaces high-loyalty artists — e.g., an Emerging-tier artist outperforming several Established acts in fan engagement despite a smaller audience
 
 **Part 3 — Scoring Model:**
 - Built a weighted Scouting Score (60% engagement / 40% reach) to rank Emerging-tier artists
-- Top recommendation: Motionless In White, ranking #1 on both audience reach and fan engagement
-- Demonstrated that raw popularity and the weighted score produce different rankings — e.g., an artist with the 2nd-highest listener count dropped to 4th once engagement was factored in, illustrating the value of engagement-aware scoring over popularity alone
+- Top recommendation: Motionless In White, ranking #1 on both audience reach and fan engagement — a result that held up after expanding the artist pool from 7 to 13
+- Demonstrated that raw popularity and the weighted score produce different rankings — e.g., HUGEL, despite the 3rd-highest listener count in its tier, dropped to 4th once engagement was factored in
+- Added an Early-Stage Watchlist (5 artists, under 100K listeners) tracked separately from the main model due to smaller sample sizes; honestav stands out with engagement comparable to established Emerging-tier artists
 
 ## Tech Stack
 
@@ -54,6 +55,11 @@ ar-analyst-project/
    - **Spotify**: create a developer app at [developer.spotify.com/dashboard](https://developer.spotify.com/dashboard) to get a Client ID and Client Secret
    - **Last.fm**: create an API account at [last.fm/api/account/create](https://www.last.fm/api/account/create) to get an API key
 4. Create a `.env` file in the project root with:
+```
+   SPOTIFY_CLIENT_ID=your_client_id
+   SPOTIFY_CLIENT_SECRET=your_client_secret
+   LASTFM_API_KEY=your_api_key
+```
 5. Run the notebooks in order:
    - `01_billboard-hot-100.ipynb` — historical hit analysis
    - `02_live_spotify_data.ipynb` — live emerging artist scouting
